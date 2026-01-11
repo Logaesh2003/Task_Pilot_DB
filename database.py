@@ -69,7 +69,7 @@ class Database:
         print("Inserting task to database ...")
         try:
             cursor = self.db.cursor()
-            query = "INSERT INTO tasks (user_id,description,task,date,priority) VALUES (%s, %s, %s, %s, %s)"
+            query = "INSERT INTO tasks (user_id,description,title,due_date,priority) VALUES (%s, %s, %s, %s, %s)"
             values = (task.user_id,task.description, task.title, task.dueDate, task.priority)
             cursor.execute(query, values)
             self.db.commit()

@@ -11,11 +11,11 @@ class Task(Base):
     __tablename__ = "tasks"
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
-    task = Column(String, nullable=False)
+    user_id = Column(Integer, nullable=False)
+    title = Column(String, nullable=False)
     description = Column(String)
     priority = Column(String)
-    date = Column(Date)
+    due_date = Column(Date)
     completed = Column(Boolean, default=False)
 
 
