@@ -16,7 +16,7 @@ class Task(Base):
     description = Column(String)
     priority = Column(String)
     due_date = Column(Date)
-    completed = Column(Boolean, default=False)
+    done = Column(Boolean, default=False)
 
 
 class Subtask(Base):
