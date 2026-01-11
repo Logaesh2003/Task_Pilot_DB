@@ -12,7 +12,7 @@ from models.request_models import User, Task, FetchTask, UpdateTask, ToggleSubta
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql://postgres:logaesh4072@localhost:5432/task_assistant"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
