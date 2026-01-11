@@ -11,7 +11,7 @@ from models.request_models import User, Task, FetchTask, UpdateTask, ToggleSubta
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base
+from models.models import Base
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
