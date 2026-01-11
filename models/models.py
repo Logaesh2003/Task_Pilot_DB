@@ -12,10 +12,10 @@ class Task(Base):
 
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, nullable=False)
-    title = Column(String, nullable=False)
+    task = Column(String, nullable=False)
     description = Column(String)
     priority = Column(String)
-    due_date = Column(Date)
+    date = Column(Date)
     done = Column(Boolean, default=False)
 
 
