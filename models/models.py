@@ -1,7 +1,9 @@
 from sqlalchemy import (
-    Column, Integer, String, Boolean, Date, Float, ForeignKey
+    Column, Integer, String, Boolean, Date, Float, ForeignKey, Text, DateTime
 )
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.sql import func
 
 Base = declarative_base()
 
@@ -36,3 +38,16 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, nullable=False)
     name = Column(String, nullable=False)
+
+
+class AIHistory(Base):
+    __tablename__ = "ai_history"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=False)
+
+    prompt = Column(Text, nullable=False)
+    response = Column(JSONB, nullable=False)
+
+
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

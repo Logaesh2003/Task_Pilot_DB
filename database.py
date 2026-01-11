@@ -11,11 +11,19 @@ from models.request_models import User, Task, FetchTask, UpdateTask, ToggleSubta
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from models import Base
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={"sslmode" : "require"},
+    pool_pre_ping = True)
+
 SessionLocal = sessionmaker(bind=engine)
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
 
 #############################################################################
 
