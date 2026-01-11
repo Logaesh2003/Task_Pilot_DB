@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import create , search , delete, update
+from routers import create , search , delete, update, ai_history, users
 
 app = FastAPI(
     title = "Task Pilot DB Service",
@@ -26,6 +26,8 @@ app.include_router(create.router)
 app.include_router(search.router)
 app.include_router(update.router)
 app.include_router(delete.router)
+app.include_router(ai_history.router)
+app.include_router(users.router)
 
 
 if __name__ == "__main__":

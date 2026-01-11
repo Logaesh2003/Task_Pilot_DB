@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
-from .request_models import User, Task, FetchTask, DeleteTask
+from models.request_models import User, Task, FetchTask, DeleteTask
 from database import Database, get_db
 import logging 
 from sqlalchemy.orm import Session
-from .models import Task, Subtask
+from models.models import Task, Subtask
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

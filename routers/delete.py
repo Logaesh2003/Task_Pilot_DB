@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from .request_models import DeleteTask, DeleteSubtask
+from models.request_models import DeleteTask, DeleteSubtask
 from database import Database
 
 router = APIRouter(

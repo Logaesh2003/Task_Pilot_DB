@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from .request_models import UpdateTask, ToggleTask
+from models.request_models import UpdateTask, ToggleTask, ToggleSubtask
 from database import Database
 import logging 
 
@@ -28,7 +28,7 @@ def toggleTask(task : ToggleTask):
     return result
 
 @router.put("/toggleSubtask")
-def toggleTask(task : ToggleTask):
+def toggleTask(task : ToggleSubtask):
     logger.info(task)
     db = Database()
     db.connect()

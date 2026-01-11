@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
-from .request_models import User, Task, CreateSubtask
+from models.request_models import User, Task, CreateSubtask
 from database import Database, get_db
 from sqlalchemy.orm import Session
-from .models import Subtask
+from models.models import Subtask
 
 router = APIRouter(
     prefix = "/create",

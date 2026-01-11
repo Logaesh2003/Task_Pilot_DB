@@ -28,3 +28,11 @@ class Subtask(Base):
     completed = Column(Boolean, default=False)
     source = Column(String, default="ai")
     confidence = Column(Float)
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True, index=True, nullable=False)
+    password = Column(String, nullable=False)
+    name = Column(String, nullable=False)

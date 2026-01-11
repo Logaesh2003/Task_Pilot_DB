@@ -5,7 +5,7 @@ load_dotenv()
 import psycopg2
 from psycopg2 import OperationalError
 
-from routers.request_models import User, Task, FetchTask, UpdateTask, ToggleSubtask
+from models.request_models import User, Task, FetchTask, UpdateTask, ToggleSubtask
 
 ###########################################################################
 
