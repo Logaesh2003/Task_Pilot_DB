@@ -1,5 +1,5 @@
 from sqlalchemy import (
-    Column, Integer, String, Boolean, Date, Float, ForeignKey, Text, DateTime
+    Column, Integer, String, Boolean, Date, Float, ForeignKey, Text, DateTime,text
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.postgresql import JSONB
@@ -16,7 +16,7 @@ class Task(Base):
     description = Column(String)
     priority = Column(String)
     date = Column(Date)
-    done = Column(Boolean, default=False)
+    done = Column(Boolean, nullable=False, server_default=text("false"))
 
 
 class Subtask(Base):
