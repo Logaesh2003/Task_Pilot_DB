@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+dotenv
+sqlmodel
+psycopg2
+python-jose
+passlib
+bcrypt
+argon2-cffi
